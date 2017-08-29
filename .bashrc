@@ -34,7 +34,7 @@ xterm*|rxvt*|dumb)
         # tput setaf 1 = RED, tput setaf 2 = GREEN
         [ `parse_git_status` -ne 1 ] && tput setaf 1 || tput setaf 2
     }
-    export PS1="($(whoami)@$(hostname)) \[$(tput bold)\]\[$(tput setaf 2)\]$(date +%F\|%R) $YELLOW\w\[\$(check_git_changes)\]\$(parse_git_branch)$LIGHT_GRAY\n $ "
+    export PS1="($(whoami)@$(hostname)) \[$(tput bold)\]\[$(tput setaf 2)\]\$(date +%F\|%R) $YELLOW\w\[\$(check_git_changes)\]\$(parse_git_branch)$LIGHT_GRAY\n $ "
     export PS4='+(${BASH_SOURCE}:${LINENO})'
     ;;
 *)
