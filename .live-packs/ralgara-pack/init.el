@@ -11,6 +11,10 @@
 (windmove-default-keybindings)
 
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 (setq shell-command-switch "-ic") ;; ensure shells load ~/.bashrc (-i)
 
