@@ -1,0 +1,1 @@
+This project contains personal session configuration files for development hosts such as `.bashrc` and `.live-packs` for Emacs. Files in the project are hidden and instantiated as hard links to the active files in the home directory.
