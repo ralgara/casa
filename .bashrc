@@ -49,8 +49,9 @@ shopt -s histappend
 export TZ='/usr/share/zoneinfo/US/Eastern'
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
-alias l='ls -lF'
+alias l='ls -F'
 alias ll='ls -alF'
+alias gitlog='git log --decorate --graph --oneline --all'
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -63,3 +64,9 @@ fi
 if [ -x ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/ralgara/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/home/ralgara/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/ralgara/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/home/ralgara/Downloads/google-cloud-sdk/completion.bash.inc'; fi
