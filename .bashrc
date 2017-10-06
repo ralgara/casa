@@ -20,26 +20,28 @@ esac
 
 force_color_prompt=yes
 
+LIGHT_GRAY="\[\033[0;37m\]"; BLUE="\[\033[1;36m\]"; RED="\[\033[0;31m\]"; LIGHT_RED="\[\033[1;31m\]";
+GREEN="\[\033[0;32m\]"; WHITE="\[\033[1;37m\]"; LIGHT_GRAY="\[\033[0;37m\]"; YELLOW="\[\033[1;33m\]";
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \(\1\)/';
+}
+function parse_git_status {
+    git status 2> /dev/null | sed -e '/(working directory clean)$/!d' | wc -l;
+}
+function check_git_changes {
+    # tput setaf 1 = RED, tput setaf 2 = GREEN
+    [ `parse_git_status` -ne 1 ] && tput setaf 1 || tput setaf 2
+}
+
 case "$TERM" in
-xterm*|rxvt*|dumb)
-    LIGHT_GRAY="\[\033[0;37m\]"; BLUE="\[\033[1;36m\]"; RED="\[\033[0;31m\]"; LIGHT_RED="\[\033[1;31m\]";
-    GREEN="\[\033[0;32m\]"; WHITE="\[\033[1;37m\]"; LIGHT_GRAY="\[\033[0;37m\]"; YELLOW="\[\033[1;33m\]";
-    function parse_git_branch {
-        git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \(\1\)/';
-    }
-    function parse_git_status {
-        git status 2> /dev/null | sed -e '/(working directory clean)$/!d' | wc -l;
-    }
-    function check_git_changes {
-        # tput setaf 1 = RED, tput setaf 2 = GREEN
-        [ `parse_git_status` -ne 1 ] && tput setaf 1 || tput setaf 2
-    }
-    export PS1="($(whoami)@$(hostname)) \[$(tput bold)\]\[$(tput setaf 2)\]\$(date +%F\|%R) $YELLOW\w\[\$(check_git_changes)\]\$(parse_git_branch)$LIGHT_GRAY\n $ "
-    export PS4='+(${BASH_SOURCE}:${LINENO})'
+xterm*|rxvt*)
+    export PS1="($(whoami)@$(hostname)) \[$(tput bold)\]\[$(tput setaf 2)\]$(date +%F\|%R) $YELLOW\w\[\$(check_git_changes)\]\$(parse_git_branch)$LIGHT_GRAY\n $ "
     ;;
 *)
+    export PS1="($(whoami)@$(hostname)) $(date +%F\|%R)\w\[\$(check_git_changes)\]\$(parse_git_branch)\n $ "
     ;;
 esac
+export PS4='+(${BASH_SOURCE}:${LINENO})'
 
 set -o emacs
 umask 002
