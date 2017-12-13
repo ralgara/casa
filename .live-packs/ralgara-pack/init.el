@@ -20,3 +20,8 @@
 
 ;; C-c left           restore window configuration (e.g. after C-x 1), from winner-mode
 ;; M-;                comment block
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+
