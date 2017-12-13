@@ -25,3 +25,4 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 
+(setq tab-width 4)
