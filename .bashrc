@@ -55,6 +55,10 @@ alias l='ls -F'
 alias ll='ls -alF'
 alias gitlog='git log --decorate --graph --oneline --all'
 
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/lib/x86_64-linux-gnu/
+
+export JAVA_HOME=/usr/java/jdk1.8.0_144
+
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
