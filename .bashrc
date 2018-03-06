@@ -34,7 +34,7 @@ function check_git_changes {
 }
 
 case "$TERM" in
-xterm*|rxvt*)
+xterm*|rxvt*|screen*)
     export PS1="($(whoami)@$(hostname)) \[$(tput bold)\]\[$(tput setaf 2)\]$(date +%F\|%R) $YELLOW\w\[\$(check_git_changes)\]\$(parse_git_branch)$LIGHT_GRAY\n $ "
     ;;
 *)
