@@ -51,7 +51,7 @@ shopt -s histappend
 export TZ='/usr/share/zoneinfo/US/Eastern'
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
-alias l='ls -aF --group-directories-first'
+alias l='ls -F --group-directories-first'
 alias ll='l -lh'
 alias gitlog='git log --decorate --graph --oneline --all'
 
