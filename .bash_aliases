@@ -1,1 +1,8 @@
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+alias l='ls -F --group-directories-first'
+alias ll='l -lh'
+alias gitlog='git log --decorate --graph --oneline --all'
+alias lsblk='lsblk -o NAME,FSTYPE,ROTA,LABEL,MOUNTPOINT,HOTPLUG,MODEL,RO,STATE'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'

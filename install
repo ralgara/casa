@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+pushd . 1>/dev/null
+cd ~/git/casa
+[ -f ~/.bashrc ] && cp ~/.bashrc{,.bak}
+cd ~
+for s in .bash{rc,_aliases,_prompt} .live-packs
+do
+    ln -sf ~/git/casa/$s
+done
+echo "casa profile installed"
+. ~/.bashrc
+popd 1>/dev/null
