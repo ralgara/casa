@@ -1,11 +1,6 @@
 ;; User pack init file
 ;;
-;; Use this file to initiate the pack configuration.
-;; See README for more information.
-
-;; Load bindings config
 (live-load-config-file "bindings.el")
-;; Saved-desktop heaven
 (desktop-save-mode)
 ;; Fast window switching: g'bye C-x,o...
 (windmove-default-keybindings)
@@ -18,11 +13,16 @@
 
 (setq shell-command-switch "-ic") ;; ensure shells load ~/.bashrc (-i)
 
-;; C-c left           restore window configuration (e.g. after C-x 1), from winner-mode
-;; M-;                comment block
-
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 
 (setq tab-width 4)
+
+(setq
+      backup-directory-alist `(("." . "~/.saves"))
+      version-control t     ;; Use version numbers for backups.
+      kept-new-versions 10  ;; Number of newest versions to keep.
+      kept-old-versions 0   ;; Number of oldest versions to keep.
+      delete-old-versions t ;; Don't ask to delete excess backup versions.
+      backup-by-copying t)  ;; Copy all files, don't rename them.
