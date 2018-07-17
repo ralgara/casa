@@ -31,10 +31,10 @@ function check_git_changes {
 
 case "$TERM" in
 xterm*|rxvt*|screen*)
-    export PS1="$WHITE(\$(whoami)@$(hostname -s)) $BLUE\$(date +'%F %R:%S %Z')\[\$(check_git_changes)\]\$(parse_git_branch) $YELLOW\w $(tput sgr0)\n $ "
+    export PS1="$WHITE(\$(whoami)@$(hostname -s)) $BLUE\$(date +'%F %R:%S %Z')\[\$(check_git_changes)\]\$(parse_git_branch) $YELLOW\w $(tput sgr0)\n$ "
     ;;
 *)
-    export PS1="(\$(whoami)@$(hostname)) \$(date +'%F %R:%S %Z') \w\[\$(check_git_changes)\]\$(parse_git_branch)\n $ "
+    export PS1="(\$(whoami)@$(hostname)) \$(date +'%F %R:%S %Z') \w\[\$(check_git_changes)\]\$(parse_git_branch)\n$ "
     ;;
 esac
 export PS4='+(${BASH_SOURCE}:${LINENO})'
