@@ -1,0 +1,9 @@
+[user]
+	email = ralgara@gmail.com
+	name = Rafael Algara
+[push]
+	default = simple
+[core]
+	autocrlf = input
+[credential]
+	helper = cache
