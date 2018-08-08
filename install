@@ -6,7 +6,7 @@ cd ~/git/casa
 cd ~
 for s in $(ls -d ~/git/casa/.* | grep -Ev '\.$|\.git')
 do
-    ln -sf ~/git/casa/$s
+    ln -s ${s}
 done
 echo "casa profile installed"
 . ~/.bashrc
