@@ -1,7 +1,9 @@
 ;; User pack init file
 ;;
 (live-load-config-file "bindings.el")
-(desktop-save-mode)
+(setq live-disable-zone t)
+(desktop-change-dir "~/.emacs.d")
+(desktop-save-mode 1)
 ;; Fast window switching: g'bye C-x,o...
 (windmove-default-keybindings)
 
