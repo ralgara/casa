@@ -5,11 +5,11 @@
 (desktop-change-dir "~/.emacs.d")
 (desktop-save-mode 1)
 
+(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-18"))
+
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-
 (require 'neotree)
-
 (global-set-key [f8] 'neotree-toggle)
 
 ;; Fast window switching: g'bye C-x,o...
