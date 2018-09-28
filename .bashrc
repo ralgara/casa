@@ -19,7 +19,13 @@ export TZ='/usr/share/zoneinfo/US/Eastern'
 
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/lib/x86_64-linux-gnu/
 export JAVA_HOME=/usr/java/jdk1.8.0_144
-export PATH=$PATH:~/bin
+export PATH=$HOME/bin:$(
+    IFS=':'
+    for i in $PATH
+    do
+        [[ ! $i =~ $HOME/bin ]] && echo $i
+    done | tr '\n' ':'
+)
 
 [ -f ~/.bash_prompt ] && source ~/.bash_prompt
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
