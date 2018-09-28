@@ -18,7 +18,7 @@ export HISTTIMEFORMAT="%F %T "
 export TZ='/usr/share/zoneinfo/US/Eastern'
 
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/lib/x86_64-linux-gnu/
-export JAVA_HOME=/usr/java/jdk1.8.0_144
+export JAVA_HOME=$(sed 's:/bin/.*::' < <(readlink -f ~/bin/java))
 export PATH=$HOME/bin:$(
     IFS=':'
     for i in $PATH
