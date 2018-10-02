@@ -23,7 +23,7 @@
 
 (setq shell-command-switch "-ic") ;; ensure shells load ~/.bashrc (-i)
 
-(setq tab-width 4)
+(setq default-tab-width 4)
 
 (setq
       backup-directory-alist `(("." . "~/.saves"))
