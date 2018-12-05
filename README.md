@@ -1,9 +1,11 @@
 # Casa
 
-Minimalist, portable user toolset for development hosts running Linux. Implemented as a simple home directory template that, bootstrapped via .bashrc, it aims at setting up a fully functional hacking rig with a simple command. Clone this repo under `~/git` and run:
+Minimalist, portable shell and editor (Emacs) configuration for development hosts running Linux. Implemented as a simple home directory template, it configures basic shell prompts and environment settings. To install:
 
 ```
-~/git/casa/install 
+git clone git@github.com:ralgara/casa.git
+cd casa
+./install
 ```
 
 * Bash configuration (`.bashrc`)
