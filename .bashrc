@@ -11,9 +11,9 @@ umask 002
 shopt -s checkwinsize
 shopt -s histappend
 
-export HISTSIZE=1000
-export HISTFILESIZE=20000
-export HISTCONTROL=ignoreboth
+export HISTSIZE=50000
+export HISTFILESIZE=50000
+export HISTCONTROL=ignorespace
 export HISTTIMEFORMAT="%F %T "
 export TZ='/usr/share/zoneinfo/US/Eastern'
 
