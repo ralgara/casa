@@ -7,7 +7,7 @@ fi
 
 alias l='ls -F'
 alias gitlog='git log --decorate --graph --oneline --all'
-alias gitlogl="git log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%C(bold)%d%Creset %C(cyan)(%cr)%Creset %C(green)%ce%Creset %s'"
+alias gitlogl="git log --graph --all --pretty=format:'%C(yellow)%h%Creset%C(cyan)%C(bold)%d%Creset %C(cyan)(%cr)%Creset %C(green)%ce%Creset %s'"
 alias lsblk='lsblk -o NAME,FSTYPE,ROTA,LABEL,MOUNTPOINT,HOTPLUG,MODEL,RO,STATE'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
