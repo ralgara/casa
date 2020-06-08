@@ -26,7 +26,7 @@ else
 fi
 
 # Append ~/bin to $PATH, deduplicate
-export PATH=$(echo $PATH:~/bin | tr ':' '\n' | sort -u | grep -v '^$' | tr '\n' ':')
+export PATH=$(echo ~/bin:$PATH | tr ':' '\n' | sort -u | grep -v '^$' | tr '\n' ':')
 
 [ -f ~/.bash_prompt ] && source ~/.bash_prompt
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
