@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 pushd . 1>/dev/null
-cd ~/git/casa
+cd ~/code/casa
 [ -f ~/.bashrc ] && cp ~/.bashrc{,.bak}
 cd ~
 for s in $(ls -d ~/git/casa/.* | grep -Ev '\.$|\.git$')
