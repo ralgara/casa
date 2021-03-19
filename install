@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
 pushd . 1>/dev/null
-cd ~/code/casa
+SRCDIR=~/code
+cd ${SRCDIR}/casa
 [ -f ~/.bashrc ] && cp ~/.bashrc{,.bak}
 cd ~
-for s in $(ls -d ~/git/casa/.* | grep -Ev '\.$|\.git$')
+for s in $(ls -d ${SRCDIR}/casa/.* | grep -Ev '\.$|\.git$')
 do
-    ln -s ${s}
+    ln -fs ${s}
 done
 echo "casa profile installed"
 . ~/.bashrc
