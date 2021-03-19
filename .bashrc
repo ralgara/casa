@@ -30,3 +30,4 @@ export PATH=$(echo ~/bin:$PATH | tr ':' '\n' | sort -u | grep -v '^$' | tr '\n' 
 
 [ -f ~/.bash_prompt ] && source ~/.bash_prompt
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
+[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
