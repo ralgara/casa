@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-pushd . 1>/dev/null
-cd ~/git/casa
 [ -f ~/.bashrc ] && cp ~/.bashrc{,.bak}
-cd ~
-for s in $(ls -d ~/git/casa/.* | grep -Ev '\.$|\.git$')
+for s in $(ls -d .* | grep -Ev '\.$|\.git$')
 do
-    ln -s ${s}
+    echo $s
+    ln -fs $(pwd)/${s} ~
 done
 echo "casa profile installed"
 . ~/.bashrc
-popd 1>/dev/null
+
