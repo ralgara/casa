@@ -31,7 +31,9 @@ function check_git_changes {
 
 case "$TERM" in
 xterm*|rxvt*|screen*)
-    export PS1="$WHITE\$(whoami)@\$(echo \$HOSTNAME | cut -d. -f1) $CYAN\$(kubectl config current-context 2>/dev/null || echo .) $BLUE\$(date +'%F %R:%S %Z')\[$(check_git_changes)\] \$(parse_git_branch) $YELLOW\w $(tput sgr0)\n$ "
+    export zzPS1="$WHITE\$(whoami)@\$(echo \$HOSTNAME | cut -d. -f1) $CYAN\$(kubectl config current-context 2>/dev/null || echo .) @ \$(kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null) $BLUE\$(date +'%F %R:%S %Z')\[$(check_git_changes)\] \$(parse_git_branch) $YELLOW\w $(tput sgr0)\n$ "
+
+    export PS1="$WHITE\$(whoami)@local $CYAN\$(kubectl config current-context 2>/dev/null || echo .) @ \$(kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null) $BLUE\$(date +'%F %R:%S %Z')\[$(check_git_changes)\] \$(parse_git_branch) $YELLOW\w $(tput sgr0)\n$ "
     ;;
 *)
     export PS1="(\$(whoami)@$(hostname)) \$(date +'%F %R:%S %Z') \w\[\$(check_git_changes)\]\$(parse_git_branch)\n$ "

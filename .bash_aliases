@@ -19,7 +19,9 @@ alias k=kubectl
 alias knodes='kubectl get node -ocustom-columns=NAME:.metadata.name,AFFINITY:".metadata.labels.kubernetes\.io/node-affinity",GPU:".status.capacity.nvidia\.com/gpu",INSTANCE:".metadata.labels.beta\.kubernetes\.io/instance-type",TYPE:".metadata.labels.clarabridge\.com/node-type",POOL:".metadata.labels.ibm-cloud\.kubernetes\.io/worker-pool-name"'
 alias kpods='kubectl get pods -owide'
 alias kcc='k config get-contexts $(k config current-context)'
+alias scaledown='k get ns | awk \'/ralgara/ { print $1; }\' | while read ns; do k get deploy -n $ns | awk \'NR>1 {print $1;}\' | while read deployment; do kubectl scale -n $ns deploy/$deployment --replicas=0; done; done'
 
+alias aws-mfa=~/Library/Python/3.9/bin/aws-mfa
 alias awsme="aws-mfa --duration 43200 --device arn:aws:iam::799231120095:mfa/rafael.algara"
 alias awsdev="aws-mfa --duration 43200 --device arn:aws:iam::799231120095:mfa/rafael.algara --assume-role arn:aws:iam::932043579407:role/OrgAdminRole"
 alias awstest="aws-mfa --duration 43200 --device arn:aws:iam::799231120095:mfa/rafael.algara --assume-role arn:aws:iam::986620538101:role/OrgAdminRole"

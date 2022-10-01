@@ -31,6 +31,8 @@ fi
 
 # Append ~/bin to $PATH, deduplicate
 export PATH=$(echo ~/bin:$PATH | tr ':' '\n' | sort -u | grep -v '^$' | tr '\n' ':')
+export PATH=$PATH:~/Library/Python/3.9/bin
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 [ -f ~/.bash_prompt ] && source ~/.bash_prompt
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
