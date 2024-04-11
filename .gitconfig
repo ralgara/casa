@@ -1,12 +1,13 @@
 [user]
-	email = ralgara@gmail.com
+#	email = ralgara@gmail.com
+    email = rafaela@qualtrics.com
 	name = Rafael Algara
 [push]
 	default = simple
 [core]
 	autocrlf = input
 [credential]
-	helper = cache
+	helper = store
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -14,5 +15,5 @@
 	required = true
 [status]
 	submoduleSummary = 1
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
+#[url "ssh://git@github.com/"]
+#	insteadOf = https://github.com/

@@ -11,3 +11,9 @@ if [ -f '/Users/rafael.algara/Downloads/google-cloud-sdk/path.bash.inc' ]; then 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/rafael.algara/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/rafael.algara/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+# Setting PATH for Python 3.11
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
+export PATH
+export PATH="/usr/local/sbin:$PATH"

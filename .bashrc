@@ -17,7 +17,11 @@ export HISTCONTROL=ignorespace
 export HISTTIMEFORMAT="%F %T "
 export TZ='/usr/share/zoneinfo/US/Eastern'
 
-export GOPRIVATE=github.com/ClarabridgeInc
+#export GOPRIVATE=github.com/ClarabridgeInc
+export GONOSUMDB=gitlab-app.eng.qops.net/*;
+export GOPRIVATE=gitlab-app.eng.qops.net/*;
+export GOPROXY=https://goproxy.eng.qops.net:1720;
+export GONOPROXY=none
 
 if [ "$(uname)" == "Darwin" ]
 then
@@ -39,3 +43,14 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 [ -f ~/.secrets ] && source ~/.secrets
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+export PATH=$PATH:/Users/ralgara/.temporalio/bin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+PATH="$(bash --norc -ec 'IFS=:; paths=($PATH); 
+for i in ${!paths[@]}; do 
+if [[ ${paths[i]} == "''/Users/ralgara/.pyenv/shims''" ]]; then unset '\''paths[i]'\''; 
+fi; done; 
+echo "${paths[*]}"')"
+export PATH="/Users/ralgara/.pyenv/shims:${PATH}"
+command pyenv rehash 2>/dev/null
+
