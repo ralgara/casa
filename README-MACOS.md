@@ -4,7 +4,7 @@
 sudo -H python3 -m pip install virtualenv
 
 * config 
- * k8s context
+  * k8s context
  * ssh
  * rc files
   
